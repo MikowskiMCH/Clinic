@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Set specjalization for doctor</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Specjalization</mat-label>
+    <input matInput [(ngModel)]="data">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

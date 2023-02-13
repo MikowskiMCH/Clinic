@@ -1,0 +1,16 @@
+<div class="p-2 m-2">
+    <h4>Prescriptions:</h4>
+    <mat-accordion>
+
+        <mat-expansion-panel *ngFor="let prescription of prescriptions">
+
+            <mat-expansion-panel-header>
+                Date: {{prescription.appointment.appointmentAt}}
+            </mat-expansion-panel-header>
+
+            Description: {{prescription.description}}
+            Medicines: {{prescription.medicines}}
+        </mat-expansion-panel>
+
+    </mat-accordion>
+</div>

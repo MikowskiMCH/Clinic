@@ -1,0 +1,92 @@
+<mat-card class="card p-2">
+    
+    <div *ngIf="showResponse" class="alert alert-danger" role="alert">
+        {{response}}
+    </div>
+    
+    <mat-card-title>
+        <h1>Profile</h1>
+    </mat-card-title>
+
+    <mat-accordion>
+
+        <mat-expansion-panel hideToggle>
+
+            <mat-expansion-panel-header>
+
+                <mat-panel-title>
+                    <h6>Profile properties</h6>
+                </mat-panel-title>
+
+                <mat-panel-description>
+                    Click to show profile properties.
+                </mat-panel-description>
+
+            </mat-expansion-panel-header>
+
+            <div class="panel-content">
+                <p>Full name: {{name}}</p>
+                <p>User role: {{role}}</p>
+                <p>Emial: {{email}}</p>
+            </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+
+            <mat-expansion-panel-header>
+                <mat-panel-title>Change password</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <form [formGroup]="changePasswordForm" autocomplete="off" (ngSubmit)="changePassword(changePasswordForm.value)" class="row">
+
+                <mat-form-field>
+                    Current Password: <input matInput formControlName="password" type="password">
+                </mat-form-field>
+
+                <mat-form-field>
+                    New password: <input matInput formControlName="newPassword" type="password">
+                </mat-form-field>
+
+                <mat-form-field>
+                    Confirm new password: <input formControlName="confirmNewPassword" matInput type="password">
+                </mat-form-field>
+
+                <div class="d-flex justify-content-end">
+                    <button mat-raised-button type="submit" [disabled]="!changePasswordForm.valid">Change</button>
+                </div>
+
+            </form>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+
+            <mat-expansion-panel-header>
+                <mat-panel-title>Change email addres</mat-panel-title>
+            </mat-expansion-panel-header>
+            
+            <form [formGroup]="changeEmailForm" autocomplete="off" (ngSubmit)="changeEmail(changeEmailForm.value)" class="row">
+
+                <mat-form-field>
+                    New email: <input formControlName="newEmail" matInput type="email">
+                </mat-form-field>
+
+                <mat-form-field>
+                    Password: <input formControlName="password" matInput type="password">
+                </mat-form-field>
+
+                <div class="d-flex justify-content-end">
+                    <button mat-raised-button type="submit" [disabled]="!changeEmailForm.valid">Change</button>
+                </div>
+            </form>
+
+        </mat-expansion-panel>
+
+    </mat-accordion>
+
+    <mat-card-actions class="d-flex justify-content-end">
+        <button mat-raised-button (click)="close()">Close</button>
+    </mat-card-actions>
+
+</mat-card>

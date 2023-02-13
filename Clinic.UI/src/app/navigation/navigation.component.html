@@ -1,0 +1,75 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <mat-sidenav *ngIf="isAuthenticated" #drawer class="sidenav" fixedInViewport
+      [mode]=" (isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+
+    <mat-toolbar>Menu</mat-toolbar>
+
+    <mat-nav-list>
+      <mat-accordion>
+
+        <mat-expansion-panel [expanded] = true>
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Patient panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <a class="expansion-item text-center" mat-list-item [routerLink] ="['/patient-panel/patient-visit/select-doctor']"><p class="expansion-item-content">Make visit</p></a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel *ngIf="role == 'Admin'">
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Admin panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <a class="expansion-item text-center" mat-list-item [routerLink] ="['/admin-panel/users-management']"><p class="expansion-item-content">Users management</p></a>
+          <a class="expansion-item text-center" mat-list-item [routerLink] ="['/admin-panel/rooms-panel/rooms-management']"><p class="expansion-item-content">Rooms management</p></a>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel *ngIf="role == 'Nurse'">
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Nurse panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <a class="expansion-item text-center" mat-list-item [routerLink] ="['/nurse-panel/patients-info']"><p class="expansion-item-content">Patient management</p></a>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="(isHandset$) && isAuthenticated">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span (click)="homeRedirect(isAuthenticated)" class="homeButton">Clinic</span>
+      <span class="example-spacer"></span>
+      <button *ngIf="!isAuthenticated" mat-button color="white" routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/authentication/login']">Login</button>
+      <button *ngIf="!isAuthenticated" mat-button color="white" routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/authentication/register']">Register</button>
+      <button *ngIf="isAuthenticated" mat-button color="white" (click)="openManageProfileDialog()">Manage profile</button>
+      <button *ngIf="isAuthenticated" mat-button color="white" (click)="logout()">Logout</button>
+      
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

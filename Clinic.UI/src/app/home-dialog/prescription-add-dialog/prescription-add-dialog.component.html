@@ -1,0 +1,21 @@
+<div class="m-2 p-2">
+    <h3>New prescription:</h3>
+    <form class="row d-flex justify-content-center" [formGroup]="prescriptionForm" (ngSubmit)="createNewPrescription(prescriptionForm.value)">
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea formControlName="description" matInput type="text"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Medicines</mat-label>
+            <textarea formControlName="medicines" matInput type="text"></textarea>
+        </mat-form-field>
+        <div class="row">
+            <div class="d-flex justify-content-start col-6">
+                <button type="button" (click)="goBack()" mat-raised-button>Go back</button>
+            </div>
+            <div class="d-flex justify-content-end col-6">
+                <button type="submit" [disabled]="!prescriptionForm.valid" mat-raised-button>Send</button>
+            </div>
+        </div>
+    </form>
+</div>

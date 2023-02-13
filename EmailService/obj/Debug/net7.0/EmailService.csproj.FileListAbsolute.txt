@@ -1,0 +1,12 @@
+C:\Documents\Projekty\Clinic\EmailService\bin\Debug\net7.0\EmailService.deps.json
+C:\Documents\Projekty\Clinic\EmailService\bin\Debug\net7.0\EmailService.dll
+C:\Documents\Projekty\Clinic\EmailService\bin\Debug\net7.0\EmailService.pdb
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\EmailService.csproj.AssemblyReference.cache
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\EmailService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\EmailService.AssemblyInfoInputs.cache
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\EmailService.AssemblyInfo.cs
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\EmailService.csproj.CoreCompileInputs.cache
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\EmailService.dll
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\refint\EmailService.dll
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\EmailService.pdb
+C:\Documents\Projekty\Clinic\EmailService\obj\Debug\net7.0\ref\EmailService.dll

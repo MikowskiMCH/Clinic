@@ -1,0 +1,18 @@
+<div class="row d-flex justify-content-center">
+    <div class="alert alert-danger" *ngIf="showError">
+        <p>{{errorMessage}}</p>
+    </div>
+    <mat-card class="mat-card col-md-5 col-sm-0" *ngFor="let room of rooms">
+        <mat-card-header>
+            <mat-card-title>M.D. {{room.doctor.firstName}} {{room.doctor.lastName}}</mat-card-title>
+            <mat-card-subtitle>Specjalization: {{room.specjalization}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="row">
+            <p>Room nr.: {{room.number}}</p>
+            <p>Nurse: {{room.nurse.firstName}} {{room.nurse.firstName}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button mat-button color="primary" (click)="GoToMakeAppointment(room.doctor.id)">Make appointment</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

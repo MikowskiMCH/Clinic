@@ -1,0 +1,24 @@
+<div class="m-2 p-2">
+
+    <div *ngIf="showError">
+        <p class="text-danger">{{errorMessage}}</p>
+    </div>
+    <h1>Prescriptions</h1>
+        <mat-accordion class="m-2">
+            <mat-expansion-panel *ngFor="let prescription of prescriptions">
+
+                <mat-expansion-panel-header>
+                    Date: {{prescription.appointment.appointmentAt}}
+                </mat-expansion-panel-header>
+
+                <div class="row p-2">
+                    <p>Medicines: {{prescription.medicines}}</p>
+                    <p>Description: {{prescription.Description}}</p>
+                </div>
+
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div class="d-flex justify-content-end">
+            <button mat-raised-button (click)="goBack()">close</button>
+        </div>
+</div>

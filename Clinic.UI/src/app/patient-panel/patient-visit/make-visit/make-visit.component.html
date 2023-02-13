@@ -1,0 +1,24 @@
+<div class="m-2 p-2 d-flex justify-content-center">
+    <mat-card class="card col-md-10 col-12 h-100">
+      <mat-card-header class="d-flex justify-content-center">
+        <mat-card-title><h1>Make appointment</h1></mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="row d-flex justify-content-evenly">
+        <div class="col-sm-6 col-md-6 content">
+          <h3 class="text-center ">Select date of visit</h3>
+          <mat-calendar [(selected)]="date" (selectedChange)="takeDate()" [minDate]="minDate" [maxDate]="maxDate" [dateFilter]="myFilter"></mat-calendar>
+        </div>
+        <div class="col-sm-6 col-md-6" *ngIf="enabled">
+          <h2>Avaliable appointments</h2>
+          <mat-radio-group class="row">
+            <mat-radio-button (change)="newAppointment = element" *ngFor="let element of time" [value]="element" [disabled] ="isDissabled(element.status)">
+              <div>{{element.appointmentAt}} <div *ngIf="isDissabled(element.status)">Booked by someone</div></div>
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </mat-card-content>
+      <mat-card-actions *ngIf="enabled" class="d-flex justify-content-end">
+        <button mat-raised-button (click)="send()" color="primary">Send request</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
