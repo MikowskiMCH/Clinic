@@ -1,5 +1,6 @@
 Clinic
 Used technologies: C#,  Identity Framework ,Entity Framework, LINQ, Microsoft SQL Server, Angular, Angular Material
+
 PL:
 Aplikacja Clinic pozwala na skorzystanie z usług przychodni lekarskiej. Do korzystania z aplikacji wymagana jest wcześniejsza autentykacja(Rejestracja, logowanie) użytkownika. Aplikacja posiada 4 role użytkowników, różniących się dostępem do oferowanych przez program funkcjonalności. Aplikacja pozwala pacjentom na umówienie konsultacji lekarskiej u wybranego lekarza z puli dostępnych lekarzy. Każdy lekarz ma możliwość wypisania recepty dla pacjenta odbywającego konsultacje, jak i przejrzeć wcześniej wypisaną pacjentowi receptę. Aplikacja pokazuje lekarzom ich następne umówione spotkanie(Niezależnie od aktualnego dnia, wskazuje kolejną zaplanowaną dla lekarza), oraz wszystkie z aktualnego dnia. Pielęgniarka akceptuje/odrzuca prośby o konsultacje u przypisanego jej lekarza, oraz ma możliwość wglądu w wszystkie zaplanowane i odbyte spotkania wraz z wypisanymi receptami dla każdego pacjenta, który przynajmniej raz został umówiony na spotkanie z danym lekarzem. Admin ma możliwość zarządzania użytkownikami(Usuwaniem, zmianą roli), oraz odpowiada za przypisywanie pracowników(lekarzy i obsługi pielęgniarskiej) do pokojów w przychodni(tworzy nowe instancje) i określa specjalizację w jakiej działają przypisani pracownicy.
 
